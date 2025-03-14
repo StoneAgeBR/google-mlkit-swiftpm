@@ -3,12 +3,9 @@
 import PackageDescription
 
 let package = Package(
-  name: "Detection",
+  name: "google-mlkit-swiftpm",
   platforms: [.iOS(.v13)],
   products: [
-    .library(
-      name: "MLKitBarcodeScanning",
-      targets: ["MLKitBarcodeScanning", "MLImage", "MLKitVision", "Common"]),
     .library(
       name: "MLKitObjectDetection",
       targets: ["MLKitObjectDetection", "MLKitObjectDetectionCommon", "MLImage", "MLKitVision", "MLKitVisionKit", "Common", "MLKitImageLabelingCommon"]),
@@ -24,40 +21,36 @@ let package = Package(
     .package(url: "https://github.com/firebase/nanopb.git", exact: "2.30910.0")
   ],
   targets: [
-//    For debugging
     .binaryTarget(
       name: "MLKitImageLabelingCommon",
-      path: "Frameworks/MLKitImageLabelingCommon.xcframework.zip"),
+      path: "MLKitFrameworks/MLKitImageLabelingCommon.xcframework.zip"),
       .binaryTarget(
       name: "MLKitVisionKit",
-      path: "Frameworks/MLKitVisionKit.xcframework.zip"),
-    .binaryTarget(
-      name: "MLKitBarcodeScanning",
-      path: "Frameworks/MLKitBarcodeScanning.xcframework.zip"),
+      path: "MLKitFrameworks/MLKitVisionKit.xcframework.zip"),
     .binaryTarget(
       name: "MLImage",
-      path: "Frameworks/MLImage.xcframework.zip"),
+      path: "MLKitFrameworks/MLImage.xcframework.zip"),
     .binaryTarget(
       name: "MLKitObjectDetection",
-      path: "Frameworks/MLKitObjectDetection.xcframework.zip"),
+      path: "MLKitFrameworks/MLKitObjectDetection.xcframework.zip"),
     .binaryTarget(
       name: "MLKitObjectDetectionCommon",
-      path: "Frameworks/MLKitObjectDetectionCommon.xcframework.zip"),
+      path: "MLKitFrameworks/MLKitObjectDetectionCommon.xcframework.zip"),
     .binaryTarget(
       name: "MLKitCommon",
-      path: "Frameworks/MLKitCommon.xcframework.zip"),
+      path: "MLKitFrameworks/MLKitCommon.xcframework.zip"),
     .binaryTarget(
       name: "MLKitFaceDetection",
-      path: "Frameworks/MLKitFaceDetection.xcframework.zip"),
+      path: "MLKitFrameworks/MLKitFaceDetection.xcframework.zip"),
     .binaryTarget(
       name: "MLKitVision",
-      path: "Frameworks/MLKitVision.xcframework.zip"),
+      path: "MLKitFrameworks/MLKitVision.xcframework.zip"),
     .binaryTarget(
       name: "GoogleToolboxForMac",
-      path: "Frameworks/GoogleToolboxForMac.xcframework.zip"),
+      path: "MLKitFrameworks/GoogleToolboxForMac.xcframework.zip"),
     .binaryTarget(
       name: "GoogleUtilitiesComponents",
-      path: "Frameworks/GoogleUtilitiesComponents.xcframework.zip"),
+      path: "MLKitFrameworks/GoogleUtilitiesComponents.xcframework.zip"),
     .target(
       name: "Common",
       dependencies: [
